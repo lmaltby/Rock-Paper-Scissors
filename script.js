@@ -1,14 +1,15 @@
 function getComputerChoice() {  
     let computerChoice = Math.random();
-    // log just to be sure it works
-    console.log(computerChoice);
     //determine which response will be returned
     if (computerChoice < 0.34) {
-        return("rock");
+        console.log("rock");
+        return "rock";
     } else if (computerChoice <= 0.67) {
-        return("paper");
+        console.log("paper");
+        return "paper";
     } else {
-        return("scissors");
+        console.log("scissors");
+        return "scissors";
     }
 }
 //call function
