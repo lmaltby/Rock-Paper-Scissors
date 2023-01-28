@@ -13,22 +13,35 @@ function getComputerChoice() {
     }
 }
 
+
 function playRound(computerSelection, playerSelection) {
 // determine who wins 
 // starting with player losses
     if (computerSelection === "Rock" && playerSelection === "Scissors") {
-        return "You lose! Rock beats Scissors";
+        console.log("You lose! Rock beats Scissors");
+        let lossCounter = lossCounter++;
+        return "loss";
     } else if (computerSelection === "Scissors" && playerSelection === "Paper") {
-        return "You lose! Scissors beats Paper";
+        console.log("You lose! Scissors beats Paper");
+        let lossCounter = lossCounter++;
+        return "loss";
     } else if (computerSelection === "Paper" && playerSelection === "Rock") {
-        return "You lose! Paper beats Rock";
+        console.log("You lose! Paper beats Rock");
+        let lossCounter = lossCounter++;
+        return "loss";
 // now for player wins
     } else if (computerSelection === "Rock" && playerSelection === "Paper") {
-        return "You win! Paper beats Rock";
+        console.log("You win! Paper beats Rock");
+        let winCounter = winCounter++;
+        return "win";
     } else if (computerSelection === "Paper" && playerSelection === "Scissors") {
-        return "You win! Scissors beats Paper";
+        console.log("You win! Scissors beats Paper");
+        let winCounter = winCounter++;
+        return "win";
     }  else if (computerSelection === "Scissors" && playerSelection === "Rock") {
-        return "You win! Rock beats Scissors";
+        console.log("You win! Rock beats Scissors");
+        let winCounter = winCounter++;
+        return "win";
 // now for ties
     } else if (computerSelection === "Rock" && playerSelection === "Rock") {
         return "It's a tie!";
@@ -44,3 +57,19 @@ const playerInput = prompt("Rock, Paper, or Scissors?");
 const playerLower = playerInput.toLowerCase();
 const playerSelection = playerLower.charAt(0).toUpperCase() + playerLower.slice(1);
 console.log(playRound(computerSelection, playerSelection));
+
+function game() {
+    for (let i = 0; i < 5; i++) {
+        let winCounter = 0;
+        let lossCounter = 0;
+        playRound(computerSelection, playerSelection);
+        if (winCounter > lossCounter) {
+            console.log("Victory!");
+        } else if (lossCounter > winCounter) {
+            console.log("Defeat!");
+        } else {
+            console.log("You...tied somehow?");
+        }
+    }
+}
+game();
