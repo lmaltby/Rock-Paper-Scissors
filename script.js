@@ -47,6 +47,7 @@ function playRound(computerSelection, playerSelection) {
 }
 
 function game() {
+// set counters to 0 beforehand to avoid disaster
     let winCounter = 0;
     let lossCounter = 0;
     let computerSelection;
@@ -61,11 +62,13 @@ function game() {
         playerLower = playerInput.toLowerCase();
         playerSelection = playerLower.charAt(0).toUpperCase() + playerLower.slice(1);
         gameCounter = playRound(computerSelection, playerSelection);
+// this counter iterates wins and losses 
         if (gameCounter == "win") {
             winCounter++;
         } else if (gameCounter == "loss") {
             lossCounter++;
         }
+// call playRound and log the round result
         playRound(computerSelection, playerSelection);
         console.log(gameCounter);
     }
@@ -78,4 +81,5 @@ function game() {
             console.log("...you managed to tie? Nice job");
     }
 }
+// finally, call game() and make it all happen
 game();
