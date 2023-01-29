@@ -74,11 +74,14 @@ function game() {
     }
 // this compares wins and losses to determine who wins overall
     if (winCounter > lossCounter) {
-            console.log("Victory! You defeated the computer " + winCounter + " to " + lossCounter);
+        alert("Victory! You defeated the computer " + winCounter + " to " + lossCounter);
+        // console.log("Victory! You defeated the computer " + winCounter + " to " + lossCounter);
     } else if (lossCounter > winCounter) {
-            console.log("Defeat! You lost " + lossCounter + " to " + winCounter);
+        alert("Defeat! You lost " + lossCounter + " to " + winCounter);
+        // console.log("Defeat! You lost " + lossCounter + " to " + winCounter);
     } else {
-            console.log("...you managed to tie? Nice job");
+        alert("...you managed to tie? Nice job");
+        // console.log("...you managed to tie? Nice job");
     }
 }
 // finally, call game() and make it all happen
