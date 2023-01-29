@@ -77,7 +77,5 @@ function game() {
     } else {
             console.log("...you managed to tie? Nice job");
     }
-    console.log(winCounter);
-    console.log(lossCounter);
 }
 game();
